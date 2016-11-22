@@ -1,0 +1,53 @@
+.home-splash {
+	margin-top: -100px;
+    position: relative;
+    width: 100%;
+    height: 460px;
+	z-index: -100;
+}
+
+div.home-splash {
+    background: url(../media/video.png) no-repeat center center;
+    background-size: contain;
+}
+
+iframe.home-splash {
+    visibility: hidden;
+    position: absolute;
+    left: -1337px;
+}
+
+.home-splash-video {
+    display: none;
+    position: relative;
+    margin: auto;
+    width: 640px;
+    height: 360px;
+    padding: 0 0 20px 0;
+	margin-top: -20px;
+}
+
+.home-splash-play span {
+    display: none;
+    text-indent: -1000px
+}
+
+@media (max-width:720px) {
+    .home-splash {
+        height: 180px;
+        padding: 20px 0;
+        margin: auto;
+        display: block;
+    }
+    .home-splash-video {
+        width: 100%;
+        height: 180px;
+        padding: 20px 0;
+    }
+}
+
+@media (min-width: 721px) and (max-width: 999px) {
+    .home-splash {
+        height: 400px;
+    }
+}
