@@ -1,6 +1,7 @@
 var mapLoaded = false;
 var dataLoaded = false;
-var data;
+var data = {};
+var dataReq = new XMLHttpRequest();
 
 function onMapLoad() {
     mapLoaded = true;
@@ -15,9 +16,8 @@ function onDataLoad() {
         build();
 }
 
-var dataReq = new XMLHttpRequest();
 dataReq.addEventListener('load', onDataLoad);
-dataReq.open("GET", "network.json");
+dataReq.open('GET', "network.json");
 dataReq.send();
 
 function build() {
@@ -25,6 +25,7 @@ function build() {
         center: new google.maps.LatLng({ lat: 0, lng: 0 }),
         zoom: 2
     });
+    
     data.forEach(function(location) {
         var marker = new google.maps.Marker({
             position: {
